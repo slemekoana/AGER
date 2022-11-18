@@ -17,7 +17,7 @@ Finally, there is a login option to create an account enabling you to connect wi
 - HTML5
 - CSS3
 - JAVASCRIPT
-- DJANGO
+- PYTHON
 
 ### LINKS
 
