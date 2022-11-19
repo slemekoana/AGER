@@ -31,17 +31,32 @@
                 <li><a href="#contact">Contact Us</a></li>
                 <li>
                     <a href="#shop"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    {% if user.is_authenticated %}
+                    <h3>Hello {{user.username|capfirst}}!</h3><br>
+                    <a href="/logout">
+                        <button type="button">
+                        Logout
+                    </button>
+                    </a> 
+                    
+                    {% else %}
                     <form action="/login" method="post">
                         {% csrf_token %}
-                        <p>Please enter your email:</p>
-                        <input type="text" placeholder="John">
+                        Email:
+                        <input type="email" placeholder="John@email.com" name="email">
+                        Password:
+                        <input type="password" name="password">
                         <button type="submit">
                             Login
                         </button>
                         <button type="submit" formaction="/signup">
                             Sign Up
                         </button>
+                        {% for message in messages %}
+                        <p style="color: red;">{{message}}</p>
+                        {% endfor %}
                     </form>
+                    {% endif %}
             </ul>
         </header>
 

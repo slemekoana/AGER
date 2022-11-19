@@ -10,34 +10,37 @@ import logging #only for test
 def index(request):
   context = {}
   return render(request, 'index.html',{})
+
 def register(request):
   #Registers a user in the User database from the admin panel
   if request.method == "POST":
-    username = request.POST["username"]
+    #username = request.POST["username"]
     email = request.POST["email"]
     password = request.POST["password"]
-    password2 = request.POST["password2"]
-    if password == password2:
+    username = email.split('@')[0] # for a future implementation, check the format
+    """ password2 = request.POST["password2"]
+    if password == password2: """
       #we check if the email already exist in the User database
-      if email and User.objects.filter(email = email ).exists():
+    if email and User.objects.filter(email = email ).exists():
         messages.info(request, "Email already used.")
-        return redirect('register') #same as HttpResponseRedirect
-      elif User.objects.filter(username = username ).exists():
+        return redirect('/') 
+        """ elif User.objects.filter(username = username ).exists():
         messages.info(request, "Username already used.")
-        return redirect('register')
-      else:
+        return redirect('') """
+    else:
         user = User.objects.create_user(username=username, email=email, password=password)
         user.save()
-        return  redirect('login')
-    else:
-      messages.info(request, "Passwords don't match.")
+        messages.info(request, "User registered, please login.")
+        return redirect('/')
+    """ else:
+      messages.info(request, "Passwords don't match.") """
   else: 
-    template = loader.get_template('register.html')
-    return HttpResponse(template.render({}, request))
+    return redirect('/')
 
 def login(request):
   if request.method == "POST":
-    username = request.POST["username"]
+    email = request.POST["email"]
+    username = email.split('@')[0]
     password = request.POST["password"]
 
     user = auth.authenticate(username=username, password = password)
@@ -47,10 +50,10 @@ def login(request):
       #logging.info(user)
       return redirect('/')
     else:
-      messages.info(request, "Invalid Credentials")
-      return redirect("login")
+      messages.info(request, "Wrong email or password")
+      return redirect("/")
   else:
-    return render(request, "login.html")
+    return redirect('/')
 
 def logout(request):
   auth.logout(request)
