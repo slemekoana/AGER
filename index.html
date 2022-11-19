@@ -31,22 +31,33 @@
                 <li><a href="#contact">Contact Us</a></li>
                 <li>
                     <a href="#shop"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <button type="button">
-                    Login
-                </button>
+                    <form action="/login" method="post">
+                        {% csrf_token %}
+                        <p>Please enter your email:</p>
+                        <input type="text" placeholder="John">
+                        <button type="submit">
+                            Login
+                        </button>
+                        <button type="submit" formaction="/signup">
+                            Sign Up
+                        </button>
+                    </form>
             </ul>
         </header>
 
         <!-- home page -->
         <div class="container">
             <img class="home-image" src="{% static 'images/nature.png' %}" alt="nature illustration " />
-            <form action="/url" method="GET">
+            <!-- <form action="/signup" method="post">
                 <p>Please enter your email:</p>
                 <input type="text" placeholder="John">
-                <button type="button">
+                <button type="submit" formaction="/login">
+                    Login
+                </button>
+                <button type="submit" formaction="/signup">
                     Sign Up
                 </button>
-            </form>
+            </form> -->
         </div>
     </section>
 
