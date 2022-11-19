@@ -18,6 +18,11 @@ Finally, there is a login option to create an account enabling you to connect wi
 - CSS3
 - JAVASCRIPT
 - PYTHON
+- DJANGO
+- SQLITE3
+
+### LOCAL INSTALLATION
+
 
 ### LINKS
 
