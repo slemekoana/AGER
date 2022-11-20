@@ -35,6 +35,8 @@ We understand that `make` is not so easy to install for Windows users, so there 
   - `pipenv migrations` followed by `pipenv migrate` to make databe migrations.
   - `pipenv start` to run the server on `locallhost:8000`.
 
+We are using Django's default SQLite3 database so there is no need to set up any particular database..
+
 
 ### SECRET KEY STORING
 - Create an `.env` file on the project folder. 
