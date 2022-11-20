@@ -31,25 +31,46 @@
                 <li><a href="#funding">Funding</a></li>
                 <li><a href="#exchange">Meet the farmer</a></li>
                 <li><a href="#contact">Contact Us</a></li>
+
                 <li><a href="shop.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+
+                <li><a href="#shop"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <h1>Your Journey to net zero starts today</h1>
+                    <img class="home-image" src="{% static 'images/nature.png' %}" alt="nature illustration " />
+                    {% if user.is_authenticated %}
+                    <h3>Hello {{user.username|capfirst}}!</h3><br>
+                    <a href="/logout">
+                        <button type="button">
+                        Logout
+                    </button>
+                    </a> 
+                    
+                    {% else %}
+                    <form action="/login" method="post">
+                        {% csrf_token %}
+                        Email:
+                        <input type="email" placeholder="John@email.com" name="email">
+                        Password:
+                        <input type="password" name="password">
+                        <button type="submit">
+                            Login
+                        </button>
+                        <button type="submit" formaction="/signup">
+                            Sign Up
+                        </button>
+                        {% for message in messages %}
+                        <p style="color: red;">{{message}}</p>
+                        {% endfor %}
+                    </form>
+                    {% endif %}
+
             </ul>
         </header>
 
         <!-- home page -->
         <div class="container">
-            <!-- <img class="home-image" src="{% static 'images/nature.png' %}" alt="nature illustration " /> -->
-            <h1>Your Journey to net zero starts today</h1>
-            <img class="home-image" src="images/nature.png" alt="nature illustration " />
-            <form action="/url" method="GET">
-                <p>Please enter your email:</p>
-                <input type="text" placeholder="John">
-                <button type="button">
-                    Login
-                </button>
-                <button type="button">
-                    Register
-                </button>
-            </form>
+            
+ 
         </div>
     </section>
 
