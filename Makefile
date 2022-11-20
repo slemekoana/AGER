@@ -7,6 +7,8 @@ ACTIVATE = $(VENV)/Scripts/activate
 
 run: $(ACTIVATE)
 	$(PYTHON) backend/manage.py djecrety -sd backend/ager
+	$(PYTHON) backend/manage.py makemigrations
+	$(PYTHON) backend/manage.py migrate
 	$(PYTHON) backend/manage.py runserver
 
 

@@ -18,4 +18,6 @@ python_version = "3.9"
 
 [scripts]
 secret_key =  "py backend/manage.py djecrety -sd backend/ager"
+migrations = "py backend/manage.py makemigrations"
+migrate = "py backend/manage.py migrate"
 start = "py backend/manage.py runserver"
