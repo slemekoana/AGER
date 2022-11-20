@@ -51,7 +51,7 @@ We are using Django's default SQLite3 database so there is no need to set up any
 
 Design: https://www.figma.com/file/jtugOFuf5nK6yGN6oIUuUD/Ager?node-id=0%3A1&t=JfsLMfo5u4tFwcCm-0
 
-Development: https://ager-minihack.netlify.app/ PLEASE PROVIDE UPDATED URL
+Development: https://deploy-preview-6--ager-minihack.netlify.app/
 
 ## TEAM
 
