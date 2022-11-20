@@ -43,6 +43,10 @@ We are using Django's default SQLite3 database so there is no need to set up any
 - Open it and type `SECRET_KEY = you_secret_key`, where `your_secret_key` is the string assigned to the variable `SECRET_KEY` in `backend/settings.py`. 
 - Once you have done this, replace the value of `SECRET_KEY` in `backend/settings.py` by `config('SECRET_KEY')`. 
 
+## FUTURE IMPROVEMENTS
+- Creating a mobile app.
+- Improving the shopping cart API.
+
 ## LINKS
 
 Design: https://www.figma.com/file/jtugOFuf5nK6yGN6oIUuUD/Ager?node-id=0%3A1&t=JfsLMfo5u4tFwcCm-0
