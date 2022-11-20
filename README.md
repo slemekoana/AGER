@@ -31,7 +31,8 @@ The installation requires `Python 3`.
 
 ### SECRET KEY STORING
 - Create an `.env` file on the project folder. 
-- Open it and type `SECRET_KEY = you_secret_key`, where `your_secret_key` is the string assigned to the variable `SECRET_KEY` in `backend/settings.py`. Once you have done this, replace the value of `SECRET_KEY` in `backend/settings.py` by `config('SECRET_KEY')`. 
+- Open it and type `SECRET_KEY = you_secret_key`, where `your_secret_key` is the string assigned to the variable `SECRET_KEY` in `backend/settings.py`. 
+- Once you have done this, replace the value of `SECRET_KEY` in `backend/settings.py` by `config('SECRET_KEY')`. 
 
 ## LINKS
 
