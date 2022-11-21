@@ -54,7 +54,7 @@ and introduce username, email (optional) and password. This will give access to 
 
 Design: https://www.figma.com/file/jtugOFuf5nK6yGN6oIUuUD/Ager?node-id=0%3A1&t=JfsLMfo5u4tFwcCm-0
 
-Development: https://ager-minihack.netlify.app/ PLEASE PROVIDE UPDATED URL
+Development: https://deploy-preview-6--ager-minihack.netlify.app/
 
 ## TEAM
 
