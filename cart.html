@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- {% load static %} -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ager</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="./social-media-icons.css"> -->
+    <script src="https://kit.fontawesome.com/c571b1b068.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}"> -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button></div>
+    </div>
+
+
+
+    <!-- Flex Container! -->
+    <div class="item-grid">
+        <div class="item item1">
+            <h3>ATX330E zero-emissions vehicle</h3>
+            <img src="https://www.epowertrucks.co.uk/wp-content/uploads/2020/08/off-road-utility-vehicle-alke-atx330e-1-e1602097248492-600x490.jpg" alt="Card image ">
+            <ul class="features">
+                <li>Ecological: they are 100% electric and zero emissions</li>
+                <li>High load capacity: maximum load capacity 1.630 kg</li>
+                <li>High towing capacity: up to 4.500 kg</li>
+            </ul>
+            <p class="price">Price: £1,500</p>
+            <a href="#" class="cta">Add to cart</a>
+        </div>
+        <div class="item item2">
+            <h3>ATX330E zero-emissions vehicle</h3>
+            <img src="https://www.epowertrucks.co.uk/wp-content/uploads/2020/08/off-road-utility-vehicle-alke-atx330e-1-e1602097248492-600x490.jpg" alt="Card image ">
+            <ul class="features">
+                <li>Ecological: they are 100% electric and zero emissions</li>
+                <li>High load capacity: maximum load capacity 1.630 kg</li>
+                <li>High towing capacity: up to 4.500 kg</li>
+            </ul>
+            <p class="price">Price: £1,500</p>
+            <a href="#" class="cta">Add to cart</a>
+        </div>
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="show-cart table">
+
+                        </table>
+                        <div>Total price: $<span class="total-cart"></span></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Order now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        </section>
+
+</body>
+
+</html>
