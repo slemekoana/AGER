@@ -170,27 +170,98 @@
     <!-- contact page -->
     <section id="contact">
         <h1>Contact Us</h1>
+        <p class="explaning">Any remark or questions</p>
+        <p class="explaning">Just write us a message</p>
+        <div class="contact-container">
+            <div class="col-1">
+                <h3 class="contact-title">
+                    Contact Information
+                </h3>
+                <p id="instructions">Fill in the form and our Team will<br/>
+                get back to you within 24 hours</p>
+
+                <div class="contact-details">
+                    <iconify-icon icon="material-symbols:phone-in-talk"></iconify-icon>
+                    <p class="tel-no">
+                        +0129 8745 1231
+                    </p>
+                </div>
+                <div class="contact-details">
+                    <iconify-icon icon="ic:baseline-email"></iconify-icon>
+                    <p class="email-address">
+                        hello@agrimission.com
+                    </p>
+                </div>
+                <div class="contact-details">
+                    <iconify-icon icon="mdi:address-marker-outline" style="color: #01200f;"></iconify-icon>
+                    <p class="address">
+                        Some British Adress
+                    </p>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="names">
+                    <label id="label" for="name">First and Last Name</label>
+                    <input id="input" type="text" name="name" id="name">
+                </div>
+                <div class="names">
+                    <label id="label" for="name">Email Address</label>
+                    <input id="input" type="text" name="email" id="email">
+                </div>
+                <div class="names">
+                    <label id="label" for="phone">Phone</label>
+                    <input id="input" type="text" name="phone" id="phone">
+                </div>
+                <div class="names">
+                    <label id="label" for="message">Message</label>
+                    <input id="input" type="text" name="message" id="message">
+                </div>
+                <button id="submit" type="submit">Send Message</button>
+            </div>
+        </div>
     </section>
 
 
-    <!-- <div class="social-media ">
-        <ul>
-            <li><a href="https://www.instagram.com/ " target="blank "><i class="fab fa-instagram "></i></a></li>
-            <li><a href="https://www.facebook.com/ " target="_blank "><i class="fab fa-facebook "></i></a></li>
-            <li><a href="https://www.linkedin.com/ " target="blank "><i class="fab fa-linkedin-in "></i></a></li>
 
-        </ul>
-    </div> -->
-
-
-
-    <div class="footer ">
-        <p>&copy; Ager 2022. All rights reserved. </p>
-        <a href="https://www.instagram.com/ " class="fa-brands fa-instagram "></a>
-        <a href="https://www.facebook.com/ " class="fa-brands fa-facebook "></a>
-        <a href="https://www.linkedin.com/ " class="fa-brands fa-linkedin "></a>
-        <a href="https://www.twitter.com/ " class="fa-brands fa-twitter "></a>
-
+    <section id="footer">
+        <!-- <div class="footer-container">
+            <img class="logo" src="/images/logo.png" alt="AGER logo">
+            <div class="fo-col-1">
+                <h3 class="title">Company</h3>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Your Business</a>
+                <a href="#">Funding</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Shop</a>
+            </div>
+            <div class="fo-col-2">
+                <h3 class="title">Resources</h3>
+                <a href="#">Help Centre</a>
+                <a href="#">Advice and Support</a>
+            </div>
+            <div class="fo-col-3">
+                <a href="">Terms</a>
+                <a href="">Privacy</a>
+                <a href="">Cookies</a>
+                <a href="">Licences</a>
+                <a href="">Settings</a>
+                <a href="">Conact</a>
+            </div>
+        </div> -->
+        <div class="footer">
+            
+            <div class="footer-elm">
+                <p>&copy; Ager 2022. All rights reserved. </p>
+                <div class="socials">
+                    <a href="https://www.instagram.com/ " class="fa-brands fa-instagram "></a>
+                    <a href="https://www.facebook.com/ " class="fa-brands fa-facebook "></a>
+                    <a href="https://www.linkedin.com/ " class="fa-brands fa-linkedin "></a>
+                    <a href="https://www.twitter.com/" class="fa-brands fa-twitter "></a>
+                </div>
+            </div>
+        </div>
+    </section>
         <script src="{% static 'script/script.js' %} "></script>
 </body>
 
