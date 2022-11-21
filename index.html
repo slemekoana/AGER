@@ -118,24 +118,48 @@
     <!-- business page -->
     <section id="business">
         <h1>Here for your business</h1>
-        <div class="row">
-            <div class="col">
+        <div class="flex-cards">
+            <div class="card card1">
                 <h1>New customers</h1>
-                <img class="align-self" src="{% static 'images/new.png' %}">Find suppliers and funding available to help transition your business to net zero.
+                <img class="align-self" src="{% static 'images/new.png'%}">Find suppliers and funding available to help transition your business to net zero.
                 <button class="align1" type="button">Discover more</button>
             </div>
-            <div class="col">
+            <div class="card card2">
                 <h1>Existing customers</h1>
-                <img class="align-self" src="{% static 'images/existing.png' %}">Make the switch to net zero and get access to the right funding for your business.
-                <button class="align2" type="button" onclick="window.open('existing.html','_blank');">Discover more</a></button>
+                <img class="align-self" src="{% static 'images/existing.png'%}">Make the switch to net zero and get access to the right funding for your business.
+                <button href= "linkref", class="align2" type="button" id = "mylink">Discover more</a></button>
             </div>
         </div>
         </div>
     </section>
-
+    <script id = linkref, type="text/javascript">
+        var myLink = document.getElementById('mylink');
+        myLink.onclick = function(){
+        window.open( "{% static 'existing.html' %}",'_blank');}
+    </script>
     <!-- funding page -->
     <section id="funding">
         <h1>Invest in a more sustainable future</h1>
+        <!-- Flex Container! -->
+        <div class="item-grid">
+            <div class="item item1">
+                <h1 class="item-heading">Government</h3>
+                    <i class="fa-solid fa-building-columns fa-4x"></i>
+                    <a href="https://www.gov.uk/guidance/farming-investment-fund/" target="_blank" class="cta">Learn More</a>
+            </div>
+
+            <div class="item item2">
+                <h1 class="item-heading">Banks</h3>
+                    <i class="fa-solid fa-piggy-bank fa-4x"></i>
+                    <a href="https://www.lloydsbank.com/business/industry-focus/agriculture/sustainable-agriculture.html/" target="_blank" class="cta">Learn More</a>
+            </div>
+
+            <div class="item item3">
+                <h1 class="item-heading">Alternative Funding</h3>
+                    <i class="fa-solid fa-money-bill fa-4x"></i>
+                    <a href="https://fundingbay.co.uk/finance-for-farmers-agricultural-funding-options/" target="_blank" class="cta">Learn more</a>
+            </div>
+        </div>
     </section>
 
     <!-- farmer page -->

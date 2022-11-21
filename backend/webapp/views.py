@@ -121,6 +121,6 @@ def cart_clear(request):
 
 
 @login_required(login_url="login")
-def cart_detail(request):
+def cart(request):
     #not yet implemented properly
-    return render(request, 'cart_detail.html')
+    return render(request, 'cart.html')
