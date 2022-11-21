@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parents[2]
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'w@gwgyi3sucxm#n#_jj^t*9b=662$&ovt&hqf*p08g!ojcwbt!'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,8 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djecrety',
+    'rest_framework',
+    'rest_framework.authtoken',
     'webapp'
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -65,11 +68,13 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages'
             ],
         },
     },
 ]
+
+CART_SESSION_ID = 'cart'
 
 WSGI_APPLICATION = 'ager.wsgi.application'
 
@@ -136,3 +141,8 @@ STATIC_ROOT = 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny'
+        #'rest_framework.permissions.IsAuthenticated',
+    ]
+}

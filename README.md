@@ -35,7 +35,9 @@ We understand that `make` is not so easy to install for Windows users, so there 
   - `pipenv migrations` followed by `pipenv migrate` to make databe migrations.
   - `pipenv start` to run the server on `locallhost:8000`.
 
-We are using Django's default SQLite3 database so there is no need to set up any particular database..
+We are using Django's default SQLite3 database so there is no need to set up any particular database. However, we recommend to create a Django superuser to be able to manage the data easily. To do that, run:
+`backend/manage.py createsuperuser`
+and introduce username, email (optional) and password. This will give access to the admin panel in `locallhost:8000/admin`.
 
 
 ### SECRET KEY STORING
@@ -45,7 +47,8 @@ We are using Django's default SQLite3 database so there is no need to set up any
 
 ## FUTURE IMPROVEMENTS
 - Creating a mobile app.
-- Improving the shopping cart API.
+- Improving the shopping cart API: doing tests, allow authentication.
+- Dynamic shop: display products according to database.
 
 ## LINKS
 

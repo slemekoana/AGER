@@ -1,8 +1,16 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect #possibly not needed
 from django.template import loader #possibly not needed
-from django.contrib.auth.models import User, auth 
+from django.contrib.auth.models import auth 
+from .models import Product, User, Cart, CartItem
+from django.contrib.auth.decorators import login_required
+# from cart.cart import Cart // not working
+from rest_framework.authtoken.models import Token
 from django.contrib import messages
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+import json
 import logging #only for test
 
 
@@ -46,8 +54,7 @@ def login(request):
     user = auth.authenticate(username=username, password = password)
     if user is not None:
       auth.login(request, user) #auth does all the work for authentification in the User database from admin
-      #logging.basicConfig(level=logging.INFO)
-      #logging.info(user)
+      
       return redirect('/')
     else:
       messages.info(request, "Wrong email or password")
@@ -63,3 +70,57 @@ def logout(request):
 
 def shop(request):
   return render(request,'shop.html')
+
+#@login_required(login_url="login") # using API Keys instead
+@api_view(['POST'])
+def cart_add(request, id, amount):
+    parsed_body = json.loads(request.body)
+    user  = parsed_body['user']
+    cart, _ = Cart.objects.get_or_create( user = user) # try this otherswise find user in the body
+    items, total = cart.add(id, amount = amount)
+    #product = Product.objects.get(id=id)
+    #cart.add(product=product)
+    return Response([items, total]) 
+
+
+#@login_required(login_url="login")
+@api_view(['DELETE'])
+def item_clear(request, id):
+    parsed_body = json.loads(request.body)
+    user  = parsed_body['user']
+    cart, _ = Cart.objects.get_or_create( user = user)
+    items, total = cart.remove(id)
+    
+    return Response([items, total]) if request.method == 'DELETE' else Response('Tell me the item to delete')
+
+
+""" @login_required(login_url="login")
+def item_increment(request, id):
+    cart = Cart(request)
+    product = Product.objects.get(id=id)
+    cart.add(product=product)
+    return redirect("cart_detail")
+
+
+@login_required(login_url="login")
+def item_decrement(request, id):
+    cart = Cart(request)
+    product = Product.objects.get(id=id)
+    cart.decrement(product=product)
+    return redirect("cart_detail") """
+
+
+#@login_required(login_url="login")
+@api_view(['PUT'])
+def cart_clear(request):
+    parsed_body = json.loads(request.body)
+    user  = parsed_body['user']
+    cart, _ = Cart.objects.get_or_create( user = user)
+    cart.items.all().delete() #untested
+    return Response('The cart is empty') if request.method == 'PUT' else Response('Use put method to clear the cart.')
+
+
+@login_required(login_url="login")
+def cart_detail(request):
+    #not yet implemented properly
+    return render(request, 'cart_detail.html')
