@@ -127,13 +127,15 @@
             <div class="card card2">
                 <h1>Existing customers</h1>
                 <img class="align-self" src="{% static 'images/existing.png'%}">Make the switch to net zero and get access to the right funding for your business.
-                <button href= "linkref", class="align2" type="button">Discover more</a></button>
+                <button href= "linkref", class="align2" type="button" id = "mylink">Discover more</a></button>
             </div>
         </div>
         </div>
     </section>
-    <script id = linkref>
-        window.open( "{% static 'existing.html' %}",'_blank');
+    <script id = linkref, type="text/javascript">
+        var myLink = document.getElementById('mylink');
+        myLink.onclick = function(){
+        window.open( "{% static 'existing.html' %}",'_blank');}
     </script>
     <!-- funding page -->
     <section id="funding">
