@@ -47,7 +47,7 @@ and introduce username, email (optional) and password. This will give access to 
 
 ## FUTURE IMPROVEMENTS
 - Creating a mobile app.
-- Improving the shopping cart API: doing tests, allow authentication.
+- Improving the shopping cart API: doing tests, allow authentication and link it to our cart page.
 - Dynamic shop: display products according to database.
 
 ## LINKS
