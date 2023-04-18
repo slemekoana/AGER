@@ -43,7 +43,6 @@ class Cart(models.Model):
         
     def create(cls, user):
         cart = cls(user=user)
-        # do something with the book
         return cart
 
     def remove(self, product, amount = 1):
